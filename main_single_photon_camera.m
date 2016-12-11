@@ -48,10 +48,10 @@ fprintf('* Finished loading SPAD camera data\n');
 
 %% * Perform image reconstruction from photon-sparse SPAD camera data
 
-run_conventional() % run conventional filtered histogram LIDAR approach
-run_proposed_step1() % run step 1 of our proposed framework
-run_proposed_step2() % run step 2 of our proposed framework
-run_proposed_step3() % run step 3 of our proposed framework
+run_conventional % run conventional filtered histogram LIDAR approach
+run_proposed_step1 % run step 1 of our proposed framework
+run_proposed_step2 % run step 2 of our proposed framework
+run_proposed_step3 % run step 3 of our proposed framework
 fprintf('* Finished image reconstruction from photon-sparse SPAD camera data!\n') 
 
 %% * Plot results

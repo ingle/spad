@@ -8,6 +8,7 @@ fprintf(' Testing Step 1 : Intensity estimation \n');
 % find a good initial point
 ll = 1;
 C_filt_raw = C;
+
 C_filt_raw(M) = -1;
 C_filt_blank = C_filt_raw;
 for i=1:nr
