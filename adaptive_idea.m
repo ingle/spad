@@ -1,7 +1,8 @@
 clc; warning off all;
 
 if ~exist('C')
-    fprintf('loading data. this will be done only once...');    
+    close all
+    fprintf('loading data. this will be done only once...\n');    
     spad_file_name = 'data/scene_man_flower_N100';
     
     % frame parameters 
@@ -25,19 +26,22 @@ if ~exist('C')
             end
         end
     end
-    fprintf('data loaded.');
+    fprintf('data loaded.\n');
 end
 if ~exist('B')
     load 'data/data_supp.mat' B
 end
 
 load 'data/censor.mat' I_keep_half I_keep_one_fourth
+% ... Or, regenerate the subsampling matrices randomly:
+% I_keep_half = rand(384)>0.5;
+% I_keep_one_fourth = rand(384)<0.25;
+
 
 C_map = func_run_proposed_step1(C,B);
 C_map_half = func_run_proposed_step1(C,B,I_keep_half);
 C_map_one_fourth = func_run_proposed_step1(C,B,I_keep_one_fourth);
 
-close all
 figure(1); imagesc(C_map); colormap gray; title('full data', 'FontSize', 20)
 figure(2); imagesc(C_map_half); colormap gray; title('half data', 'FontSize', 20)
 figure(3); imagesc(C_map_one_fourth); colormap gray; title('quarter data', 'FontSize', 20)
