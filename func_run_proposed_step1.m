@@ -2,14 +2,14 @@ function C_map = func_run_proposed_step1(C, B, varargin)
 
 numvarargs = length(varargin);
 if numvarargs==1
- I_keep = varargin{1};
- tau_A = 2.6;
+    I_keep = varargin{1};
+    tau_A = 2.6;
 elseif numvarargs==2
- I_keep = varargin{1};
- tau_A = varargin{2};
+    I_keep = varargin{1};
+    tau_A = varargin{2};
 else
- I_keep = ones(384);
- tau_A = 2.6;
+    I_keep = ones(384);
+    tau_A = 2.6;
 end
 
 I_remove = ~I_keep;
